@@ -1,0 +1,60 @@
+ASGI (Asynchronous Server Gateway Interface) is a spiritual successor to WSGI,
+intended to provide a standard interface between async-capable Python web servers, frameworks, and applications.
+https://asgi.readthedocs.io/en/latest/
+
+WSGI is the Web Server Gateway Interface
+https://wsgi.readthedocs.io/en/latest/what.html
+https://www.python.org/dev/peps/pep-3333/
+
+settings:
+    https://docs.djangoproject.com/en/3.1/ref/django-admin/
+
+    python manage.py diffsettings
+        displays differences between the current settings file and Django’s default settings.
+
+
+py manage.py runserver 8080
+    http://127.0.0.1:8080/polls/details
+py manage.py startapp polls # app application eq suit, db-...
+
+db:
+    SQLite default
+    engine:
+        'django.db.backends.sqlite3'
+        'django.db.backends.postgresql'
+        'django.db.backends.mysql'
+        'django.db.backends.oracle'
+    py manage.py makemigrations
+        make migrations
+    py manage.py migrate
+        init create tables / apply
+
+    \dt     PostgreSQL
+    SHOW TABLES MariaDB, MySQL
+    .schema SQLite
+
+models
+    your database layout, with additional metadata.
+    'polls.apps.PollsConfig' eq polls/apps.py PollsConfig class
+
+    python manage.py makemigrations polls
+        create model
+        look migrations/..
+    python manage.py sqlmigrate polls 0001
+        gen sql, create migrations for changes
+    python manage.py migrate
+        apply all migrations to the database.
+settings
+
+api
+    python manage.py shell
+        python.exe + DJANGO_SETTINGS_MODULE env var, mysite/settings.py file.
+
+admin
+    python manage.py createsuperuser
+    python manage.py runserver
+        run dev server
+static
+    py manage.py collectstatic
+    http://127.0.0.1:8080/static/css/video-js.min.css
+    http://127.0.0.1:8080/static/css/audio.css

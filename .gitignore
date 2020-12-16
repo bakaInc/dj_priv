@@ -1,0 +1,4 @@
+temp/
+del/
+*.sqlite
+__pycache__
